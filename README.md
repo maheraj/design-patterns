@@ -69,6 +69,7 @@ The Observer Pattern defines a one to many dependency between objects so that on
 * One to many dependency is between Subject(One) and Observer(Many)
 * There is dependency as Observers themselves don’t have access to data. They are dependent on Subject to provide them data.
 * Disadvantage - Lapsed listener problem
+
 **When to use this pattern?**
 You should consider using this pattern in your application when multiple objects are dependent on the state of one object as it provides a neat and well tested design for the same.
 ```
