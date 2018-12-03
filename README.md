@@ -93,3 +93,23 @@ class User implements Observer {
 
 }
 ```
+
+## Singleton - Creational Pattern
+The singleton pattern is one of the simplest design patterns. Sometimes we need to have only one instance of our class for example a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly. 
+
+```
+class Singleton {
+  private volatile static Singleton obj;
+  private Singleton() {}
+  public static Singleton getInstance() {
+    if(obj == null) {
+      synchronized (Singleton.class) {
+        if(obj == null) {
+          obj = new Singleton();
+        }
+      }
+    }
+    return obj;
+  }
+}
+```
