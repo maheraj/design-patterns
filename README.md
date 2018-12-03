@@ -120,3 +120,120 @@ class Singleton {
   }
 }
 ```
+
+## Decorator - Behavioral Design Pattern
+In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. The Decorator [3] design pattern is one of the twenty-three well-known GoF design patterns that describe how to solve recurring design problems to design flexible and reusable object-oriented software, that is, objects that are easier to implement, change, test, and reuse.
+
+```
+//Abstract Pizza class (All classes extend from this
+abstract class Pizza {
+  String description = "Unknown Pizza";
+  public String getDescription() {
+    return description;
+  }
+  public abstract int getCost();
+}
+
+//The decorator class :  It extends Pizza to be interchangable with it topings decorator can also be implemented as an interface 
+
+abstract class ToppingsDecorator extends Pizza {
+  public abstract String getDescription();
+}
+
+// Concrete pizza classes 
+class PeppyPaneer extends Pizza {
+  public PeppyPaneer() {description = "PeppyPaneer"}
+  public String getDescription() {return pizza.getDescription;}
+  public int getCost() {return 100;}
+}
+
+class FarmHouse extends Pizza {
+  public FarmHouse() {description = "FarmHouse"}
+  public String getDescription() {return pizza.getDescription;}
+  public int getCost() {return 100;}
+}
+
+class Margherita extends Pizza {
+  public Margherita() {description = "Margherita"}
+  public String getDescription() {return pizza.getDescription;}
+  public int getCost() {return 100;}
+}
+
+class ChickenFiesta extends Pizza {
+  public ChickenFiesta() {description = "ChickenFiesta"}
+  public String getDescription() {return pizza.getDescription;}
+  public int getCost() {return 100;}
+}
+
+class SimplePizza extends Pizza {
+  public SimplePizza() {description = "SimplePizza"}
+  public String getDescription() {return pizza.getDescription;}
+  public int getCost() {return 100;}
+}
+
+// Concrete toppings classes 
+class FreshTomato extends ToppingsDecorator {
+  public FreshTomato(Pizza pizza) {
+    this.pizza = pizza;
+  }
+  
+  public String getDescription() {
+    return pizza.getDescription + ", Fresh Tomato ";
+  }
+  public int getCost() {
+    return 40 + pizza.getCost();
+  }
+}
+
+
+class Barbeque extends ToppingsDecorator {
+  public Barbeque(Pizza pizza) {
+    this.pizza = pizza;
+  }
+  
+  public String getDescription() {
+    return pizza.getDescription + ", Barbeque ";
+  }
+  public int getCost() {
+    return 60 + pizza.getCost();
+  }
+}
+
+class Paneer extends ToppingsDecorator {
+  public Paneer(Pizza pizza) {
+    this.pizza = pizza;
+  }
+  
+  public String getDescription() {
+    return pizza.getDescription + ", Paneer ";
+  }
+  public int getCost() {
+    return 30 + pizza.getCost();
+  }
+}
+
+class PizzaStore 
+{ 
+    public static void main(String args[]) 
+    { 
+        // create new margherita pizza 
+        Pizza pizza = new Margherita(); 
+        System.out.println( pizza.getDescription() + 
+                         " Cost :" + pizza.getCost()); 
+  
+        // create new FarmHouse pizza 
+        Pizza pizza2 = new FarmHouse(); 
+  
+        // decorate it with freshtomato topping 
+        pizza2 = new FreshTomato(pizza2); 
+  
+        //decorate it with paneer topping 
+        pizza2 = new Paneer(pizza2); 
+  
+        System.out.println( pizza2.getDescription() + 
+                         " Cost :" + pizza2.getCost()); 
+        Pizza pizza3 = new Barbeque(null);    //no specific pizza 
+        System.out.println( pizza3.getDescription() + "  Cost :" + pizza3.getCost()); 
+   } 
+} 
+```
