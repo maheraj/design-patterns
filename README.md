@@ -37,3 +37,29 @@ Behavioral patterns are about identifying common communication patterns between 
 * Strategy
 * Template method
 * Visitor
+
+## Creational Design Patterns
+These design patterns are all about class instantiation or object creation. Two types:
+### Factory Method - Creational - Object Creation
+Factory method is a creational design pattern, i.e., related to object creation. In Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
+* Creational - Object Creation.
+* Hide object creation logic to client.
+* The idea is to use a static member-function (static factory method) which creates & returns instances, hiding the details of class modules from user.
+* A factory pattern is one of the core design principles to create an object
+```
+abstract class Vehicle {}
+Class TwoWheeler extends Vehicle {}
+Class FourWheeler extends Vehicle {}
+public class VehicleFactory {
+  public static Vehicle getVehicle(int type) {
+    if(type == 1) {
+      return new TwoWheeler();
+    } else if (type == 2) {
+      return new FourWheeler();
+    } else {
+      return null;
+    }
+  }
+}
+
+```
