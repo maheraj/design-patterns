@@ -48,8 +48,8 @@ Factory method is a creational design pattern, i.e., related to object creation.
 * A factory pattern is one of the core design principles to create an object
 ```
 abstract class Vehicle {}
-Class TwoWheeler extends Vehicle {}
-Class FourWheeler extends Vehicle {}
+class TwoWheeler extends Vehicle {}
+class FourWheeler extends Vehicle {}
 public class VehicleFactory {
   public static Vehicle getVehicle(int type) {
     if(type == 1) {
