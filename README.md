@@ -63,3 +63,31 @@ public class VehicleFactory {
 }
 
 ```
+
+## Observer - Behavioral Design Pattern
+The Observer Pattern defines a one to many dependency between objects so that one object changes state, all of its dependents are notified and updated automatically. Ex: subscribe to a magazine. Subscrive to a youtube channel.
+* One to many dependency is between Subject(One) and Observer(Many)
+* There is dependency as Observers themselves don’t have access to data. They are dependent on Subject to provide them data.
+**When to use this pattern?**
+You should consider using this pattern in your application when multiple objects are dependent on the state of one object as it provides a neat and well tested design for the same.
+```
+interface Subject {
+  List<Observer> observers;
+  
+  void registerObserver(Observer observer);
+  void unregisterObserver(Observer observer);
+  void notifyObservers();
+}
+
+interface Observer {
+  void notify();
+}
+
+class Magazine implements Subject {
+
+}
+
+class User implements Observer {
+
+}
+```
