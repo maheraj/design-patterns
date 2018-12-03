@@ -97,6 +97,13 @@ class User implements Observer {
 ## Singleton - Creational Pattern
 The singleton pattern is one of the simplest design patterns. Sometimes we need to have only one instance of our class for example a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly. 
 
+Singleton is a part of Gang of Four design pattern and it is categorized under creational design patterns. Initialization Types of singleton:
+* Early initialization
+* Lazy initialization
+
+Example of Singleton Class:
+* Runtime - java .lang.Runtime;
+
 ```
 class Singleton {
   private volatile static Singleton obj;
