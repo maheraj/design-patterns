@@ -8,6 +8,12 @@ There are mainly three types of design patterns:
 * Behavioral
 
 ### Creational
+* Singleton: In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+* Builder: Builder pattern builds a complex object using simple objects and using a step by step approach. 
+* Prototype: It is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects. The concept is to copy an existing object rather than creating a new instance from scratch, something that may include costly operations.
+* Factory Method: In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
+* Abastract Factory: Factory of factory
+
 These design patterns are all about class instantiation or object creation. Two types:
 * Class creational patterns - While class-creation patterns use inheritance effectively in the instantiation process
 * Object creational patterns - use delegation effectively to get the job done
